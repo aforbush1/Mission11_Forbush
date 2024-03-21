@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model Mission11_Forbush.Models.ViewModels.BooksListViewModel
+
+    <h1>Bestsellers</h1>
+
+@* @foreach (Book b in Model.Books)
+{
+
+} *@
+
+@foreach (Book b in Model.Books)
+{
+    <partial name="ProjectSummary" model="b"/>
+}
+
+<!-- Dynamically built tag helper that builds divs and a tags for pages -->
+<div page-model="@Model.PaginationInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
+    page-class-normal="btn-outline-dark" page-class-selected="btn-primary" class="btn-group-pull-right m-1"></div>
